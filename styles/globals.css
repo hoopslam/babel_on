@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer components {
+  .infoText {
+    @apply p-4 dark:bg-gray-700/50 dark:text-white bg-gray-100 rounded-lg max-w-[300px]
+  }
+  .sideBarRow {
+    @apply rounded-lg px-5 py-3 text-sm flex items-center justify-center space-x-2 cursor-pointer bg-white  text-teal-500 hover:bg-teal-600 hover:text-white transition-all duration-200 ease-out
+  }
+}
