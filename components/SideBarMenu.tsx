@@ -1,21 +1,39 @@
 'use client';
 
-import { signOut } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
+import { useCollection } from 'react-firebase-hooks/firestore';
 import NewChat from './NewChat';
+import { collection, orderBy, query } from 'firebase/firestore';
+import { db } from '../firebase';
+import ChatLink from './ChatLink';
 
 function SideBarMenu() {
+    const { data: session } = useSession();
+    const [chats, loading, error] = useCollection(
+        session &&
+            query(
+                collection(db, 'users', session.user?.email!, 'chats'),
+                orderBy('createdAt', 'desc')
+            )
+    );
+
     const handleSignOut = () => {
         signOut();
         alert(`Signed Out`);
     };
 
     return (
-        <div className='flex-1 max-w-xs flex flex-col justify-between'>
+        <div className='flex-1 max-w-sm flex flex-col justify-between'>
             <div>
                 <NewChat />
                 <div>Select Language</div>
                 <div>Select Mode</div>
-                <div>Map through chat history</div>
+                {chats?.docs.map((chat) => (
+                    <ChatLink
+                        key={chat.id}
+                        id={chat.id}
+                    />
+                ))}
                 <div>Map through translations history</div>
             </div>
 

@@ -4,6 +4,7 @@ import { getServerSession } from 'next-auth';
 import '../styles/globals.css';
 import { authOptions } from '../pages/api/auth/[...nextauth]';
 import Login from '@/components/Login';
+import ClientProvider from '../components/ClientProvider';
 
 export const metadata = {
     title: 'Babel On',
@@ -19,10 +20,11 @@ export default async function RootLayout({
 
     return (
         <html lang='en'>
-            <body className='dark:bg-[#343541]'>
+            <body>
                 <SessionProvider session={session}>
                     {session ? (
                         <>
+                            <ClientProvider />
                             <SideBar />
                             {children}
                         </>

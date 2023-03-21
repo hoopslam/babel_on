@@ -10,7 +10,6 @@ function SideBar() {
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(min-width: 768px');
-        console.log(mediaQuery);
 
         const handleMediaQueryChange = (e: MediaQueryList) => {
             setIsMdScreen(e.matches);
@@ -28,7 +27,7 @@ function SideBar() {
         <>
             {!isMdScreen && (
                 <button
-                    className={`fixed top-2 left-2 bg-teal-500 text-white p-3 `}
+                    className={`fixed top-2 left-2 text-teal-500 p-3 `}
                     type='button'
                     onClick={() => setActive(true)}
                 >
@@ -38,11 +37,11 @@ function SideBar() {
             <aside
                 className={`${
                     isMdScreen || active ? `left-0` : `-left-full`
-                } p-2 z-10  flex flex-col pt-16 h-full bg-teal-500 fixed top-0 transition-all duration-500 ease-out`}
+                } py-10 px-4 z-10  flex flex-col pt-16 h-screen bg-teal-500 absolute md:relative top-0 transition-all duration-500 ease-out`}
             >
                 {active && (
                     <button
-                        className={`fixed top-2 left-2 bg-teal-500 text-white p-3 `}
+                        className={`fixed top-2 left-2 text-white p-3 `}
                         type='button'
                         onClick={() => setActive(false)}
                     >
