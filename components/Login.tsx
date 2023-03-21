@@ -2,18 +2,24 @@
 
 import { signIn } from 'next-auth/react';
 import React from 'react';
+import Title from './Title';
 
 function Login() {
     return (
-        <div className='flex-1 max-w-xs flex flex-col items-center justify-center'>
-            <p className='text-white p-4'>Sign In to start using Babel On</p>
-            <button
-                className='sideBarRow px-12'
-                onClick={() => signIn('google')}
-            >
-                Sign In
-            </button>
-        </div>
+        <main className='flex flex-col flex-1 items-center justify-center h-full px-2'>
+            <Title />
+            <div className='flex flex-col items-center justify-center'>
+                <p className='p-4'>
+                    Sign In to start chatting with your AI Instructor!
+                </p>
+                <button
+                    className='px-12 py-2 rounded bg-teal-500 hover:bg-teal-600 text-white'
+                    onClick={() => signIn('google')}
+                >
+                    Sign In
+                </button>
+            </div>
+        </main>
     );
 }
 

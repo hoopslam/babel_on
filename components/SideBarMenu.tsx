@@ -4,6 +4,11 @@ import { signOut } from 'next-auth/react';
 import NewChat from './NewChat';
 
 function SideBarMenu() {
+    const handleSignOut = () => {
+        signOut();
+        alert(`Signed Out`);
+    };
+
     return (
         <div className='flex-1 max-w-xs flex flex-col justify-between'>
             <div>
@@ -17,7 +22,7 @@ function SideBarMenu() {
             <button
                 type='button'
                 className='sideBarRow cursor-pointer'
-                onClick={() => signOut()}
+                onClick={handleSignOut}
             >
                 Sign out
             </button>
