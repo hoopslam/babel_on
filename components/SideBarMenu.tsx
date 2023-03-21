@@ -26,15 +26,12 @@ function SideBarMenu() {
         <div className='flex-1 max-w-sm flex flex-col justify-between'>
             <div>
                 <NewChat />
-                <div>Select Language</div>
-                <div>Select Mode</div>
                 {chats?.docs.map((chat) => (
                     <ChatLink
                         key={chat.id}
                         id={chat.id}
                     />
                 ))}
-                <div>Map through translations history</div>
             </div>
 
             <button

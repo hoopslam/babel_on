@@ -19,6 +19,8 @@ function ChatLink({ id }: Props) {
     const [messages] = useCollection(
         collection(db, 'users', session?.user?.email!, 'chats', id, 'messages')
     );
+    const message =
+        messages?.docs[messages?.docs.length - 1]?.data().message.content;
 
     const removeChat = async () => {
         if (confirm('Are you sure you want to delete this chat?')) {
@@ -43,8 +45,9 @@ function ChatLink({ id }: Props) {
             }`}
         >
             <p className={`${active ? 'text-white' : ''}`}>
-                {messages?.docs[messages?.docs.length - 1]?.data().text ||
-                    'New Chat'}
+                {message?.length > 20
+                    ? message.substring(0, 19) + '...'
+                    : message || 'New Chat'}
             </p>
             <button
                 type='button'

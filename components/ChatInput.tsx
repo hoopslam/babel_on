@@ -93,7 +93,7 @@ function ChatInput({ chatId }: Props) {
                 <button
                     type='submit'
                     disabled={!prompt || !session}
-                    className='rounded bg-teal-500 text-white px-6 py-1 hover:bg-teal-600 disabled:bg-gray-300 disabled:cursor-not-allowed'
+                    className='rounded bg-teal-500 text-white px-6 py-1 hover:bg-teal-600'
                 >
                     Send
                 </button>
