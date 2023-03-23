@@ -21,9 +21,11 @@ function SideBar() {
         };
         handleMediaQueryChange(mediaQuery);
 
+        //@ts-ignore
         mediaQuery.addEventListener('change', handleMediaQueryChange);
 
         return () => {
+            //@ts-ignore
             mediaQuery.removeEventListener('change', handleMediaQueryChange);
         };
     }, []);
