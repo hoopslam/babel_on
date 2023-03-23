@@ -2,7 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import SideBarMenu from './SideBarMenu';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+import {
+    Bars3Icon,
+    ChatBubbleLeftRightIcon,
+    XMarkIcon,
+} from '@heroicons/react/24/solid';
+import Link from 'next/link';
 
 function SideBar() {
     const [active, setActive] = useState(false);
@@ -37,7 +42,7 @@ function SideBar() {
             <aside
                 className={`${
                     isMdScreen || active ? `left-0` : `-left-full`
-                } py-10 px-4 z-10  flex flex-col pt-16 h-screen bg-teal-500 absolute md:relative top-0 transition-all duration-500 ease-out`}
+                } py-10 px-4 z-10  flex flex-col pt-16 h-screen bg-teal-500 absolute m-w-lg md:relative top-0 transition-all items-center duration-500 ease-out`}
             >
                 {active && (
                     <button
@@ -48,6 +53,13 @@ function SideBar() {
                         <XMarkIcon className='h-5 w-5' />
                     </button>
                 )}
+                <Link
+                    href='/'
+                    className='text-white flex m-5'
+                >
+                    <ChatBubbleLeftRightIcon className='w-8 h-8' />
+                    <p>Babel On</p>
+                </Link>
                 <SideBarMenu />
             </aside>
         </>

@@ -1,5 +1,6 @@
 import { ROLE } from '../typings.d';
 import { DocumentData } from 'firebase/firestore';
+import Image from 'next/image';
 
 interface Props {
     message: DocumentData;
@@ -13,10 +14,16 @@ function Message({ message }: Props) {
     return (
         <div className={`py-5 ${isTeacher && `bg-gray-200`}`}>
             <div className='flex space-x-5 px-10 max-w-2xl mx-auto'>
-                <img
-                    src={message.user.avatar || `/robot.png`}
+                <Image
+                    src={
+                        isTeacher
+                            ? `/robot.png`
+                            : message.user.avatar || `/user.png`
+                    }
                     alt='user profile image'
-                    className='h-8 w-8 rounded-full'
+                    width={32}
+                    height={32}
+                    className='rounded-full'
                 />
                 <p>{message.message.content}</p>
             </div>

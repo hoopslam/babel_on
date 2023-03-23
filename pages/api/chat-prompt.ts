@@ -2,7 +2,7 @@ import { queryOpenAI } from '../../util/openai';
 import { NextApiRequest, NextApiResponse } from 'next';
 import admin from 'firebase-admin';
 import { adminDb } from '../../firebaseAdmin';
-import { FirebaseMessage } from '../../typings.d';
+import { FirebaseChat, FirebaseMessage } from '../../typings.d';
 
 interface Data {
     answer: string;
@@ -12,13 +12,7 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    const {
-        message,
-        chatId,
-        learningLanguage = `Korean`,
-        nativeLanguage = `English`,
-        session,
-    } = req.body;
+    const { message, chatId, session } = req.body;
 
     if (!message) {
         res.status(400).json({
@@ -44,6 +38,16 @@ export default async function handler(
         .orderBy('createdAt', 'asc');
     const snapshot = await messagesRef.get();
     const messages = snapshot.docs.map((doc) => doc.data().message);
+
+    const chatRef = adminDb
+        .collection('users')
+        .doc(session?.user?.email)
+        .collection('chats')
+        .doc(chatId);
+    const chat = await chatRef.get();
+    const {
+        language: { learningLanguage, nativeLanguage },
+    } = chat.data() as FirebaseChat;
 
     //query OpenAI with Messages Context
     const AIResponse = await queryOpenAI(

@@ -12,6 +12,7 @@ export const queryOpenAI = async (
     learningLanguage: string,
     nativeLanguage: string
 ) => {
+    console.log(learningLanguage);
     try {
         const completion = await openai.createChatCompletion({
             model: `gpt-3.5-turbo`,

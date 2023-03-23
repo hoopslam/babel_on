@@ -17,3 +17,13 @@ export interface ChatMessage {
     role: ROLE;
     content: string;
 }
+
+export interface FirebaseChat {
+    message: FirebaseMessage[];
+    createdAt: admin.firestore.Timestamp;
+    userId: string;
+    language: {
+        learningLanguage: string;
+        nativeLanguage: string;
+    };
+}

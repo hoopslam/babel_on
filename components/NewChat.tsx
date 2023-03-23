@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase';
 
-function NewChat() {
+function NewChat({ nativeLanguage = `English`, learningLanguage = `Korean` }) {
     const { data: session } = useSession();
     const router = useRouter();
 
@@ -12,9 +12,13 @@ function NewChat() {
         const doc = await addDoc(
             collection(db, 'users', session?.user?.email!, 'chats'),
             {
-                messages: [], //might not use
+                language: {
+                    nativeLanguage,
+                    learningLanguage,
+                },
                 userId: session?.user?.email!,
                 createdAt: serverTimestamp(),
+                messages: [],
             }
         );
 
@@ -27,7 +31,7 @@ function NewChat() {
             onClick={createNewChat}
         >
             <PlusIcon className='h-5 w-5' />
-            <p>New Conversation</p>
+            <p>Create New Class</p>
         </div>
     );
 }

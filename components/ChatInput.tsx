@@ -15,8 +15,6 @@ function ChatInput({ chatId }: Props) {
     const [prompt, setPrompt] = useState(``);
     const { data: session } = useSession();
 
-    const language = 'Korean';
-
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPrompt(e.target.value);
     };
@@ -66,7 +64,6 @@ function ChatInput({ chatId }: Props) {
             body: JSON.stringify({
                 message: { role: ROLE.USER, content: input },
                 chatId,
-                language,
                 session,
             }),
         }).then(() => {
@@ -77,7 +74,7 @@ function ChatInput({ chatId }: Props) {
     };
 
     return (
-        <div className='bg-gray-100 rounded-lg text-sm m-5 max-w-2xl w-full mx-auto '>
+        <div className='bg-gray-100 rounded-lg text-sm m-5 max-w-2xl w-full mx-auto px-2'>
             <form
                 className='p-2 space-x-5 flex'
                 onSubmit={handleSubmit}

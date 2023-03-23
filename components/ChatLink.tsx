@@ -23,12 +23,8 @@ function ChatLink({ id }: Props) {
         messages?.docs[messages?.docs.length - 1]?.data().message.content;
 
     const removeChat = async () => {
-        if (confirm('Are you sure you want to delete this chat?')) {
-            await deleteDoc(
-                doc(db, 'users', session?.user?.email!, 'chats', id)
-            );
-            router.replace('/');
-        }
+        await deleteDoc(doc(db, 'users', session?.user?.email!, 'chats', id));
+        router.replace('/');
     };
 
     useEffect(() => {
@@ -40,13 +36,13 @@ function ChatLink({ id }: Props) {
     return (
         <Link
             href={`/chat/${id}`}
-            className={`justify-between sideBarRow ${
+            className={`justify-between w-64 sideBarRow ${
                 active ? 'bg-teal-600' : ''
             }`}
         >
             <p className={`${active ? 'text-white' : ''}`}>
-                {message?.length > 20
-                    ? message.substring(0, 19) + '...'
+                {message?.length > 16
+                    ? message.substring(0, 15) + '...'
                     : message || 'New Chat'}
             </p>
             <button
