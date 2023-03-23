@@ -6,7 +6,7 @@ import Title from './Title';
 
 function Login() {
     return (
-        <main className='flex flex-col flex-1 items-center justify-center h-full px-2'>
+        <main className='flex w-full flex-col items-center justify-center px-2'>
             <Title />
             <div className='flex flex-col items-center justify-center'>
                 <p className='p-4'>

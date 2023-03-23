@@ -9,7 +9,7 @@ interface Props {
 
 function ChatPage({ params: { id } }: Props) {
     return (
-        <section className='flex flex-col h-screen overflow-hidden flex-1 py-12'>
+        <section className='flex flex-col h-screen overflow-hidden flex-1 pb-20 sm:py-10'>
             <ChatScreen chatId={id} />
             <ChatInput chatId={id} />
         </section>

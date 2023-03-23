@@ -3,7 +3,7 @@ import Title from '../components/Title';
 
 export default function Home() {
     return (
-        <main className='flex flex-col flex-1 items-center justify-center h-full px-2'>
+        <main className='flex flex-col flex-1 items-center justify-start py-10 sm:justify-center h-full px-2'>
             <Title />
             <div className='infoText'>
                 <h2 className='text-lg mb-2'>Create a new language class</h2>
