@@ -53,8 +53,8 @@ function ChatScreen({ chatId }: Props) {
     return (
         <div className='flex-1 flex items-center justify-center'>
             <p className='infoText'>
-                Welcome to your new chat. Say "Hi" to begin your new language
-                lesson.
+                Welcome to your new chat. Say &quot;Hi&quot; to begin your new
+                language lesson.
             </p>
         </div>
     );
