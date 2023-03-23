@@ -1,38 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🗣️ Babel On 🌍
 
-## Getting Started
+Babel On is a AI chat application focused on language learning. Powered by OpenAI's GPT-3.5 Turbo model, the app simulates a conversation class environment. Simply choose your native language and target learning language and Babel On will lead you through a conversation class based on whatever subject the user chooses to talk about.
 
-First, run the development server:
+## 💻 Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Open-AI API
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Behind the scenes, Babel On uses Open-AI's GPT-3.5 Turbo model to generate new chat prompts. The initial chat prompt is fed a customized scenario to train its behavior and speech in the classroom.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Firebase
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The application uses Firebase authentication and Firestore for its database
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Next.js
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The front end as well as the back end API was built using Next.js. Future development plans to use this backend API for other projects.
 
-## Learn More
+### Other Technologies used
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   Typescript
+-   Tailwind
