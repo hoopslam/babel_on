@@ -27,7 +27,7 @@ function NewChat({ nativeLanguage = `English`, learningLanguage = `Korean` }) {
 
     return (
         <div
-            className='border-teal-500 border sideBarRow'
+            className='bg-teal-500 border sideBarRow text-white'
             onClick={createNewChat}
         >
             <PlusIcon className='h-5 w-5' />
