@@ -19,6 +19,7 @@ function LanguageSelect() {
                 options={LANGUAGES}
                 placeholder={`Native Language`}
                 defaultValue={nativeLanguage}
+                //@ts-ignore
                 onChange={(value) => setNativeLanguage(value)}
             />
             <p className='text-teal-500 mt-2 mb-1'>Your learning language</p>
@@ -27,6 +28,7 @@ function LanguageSelect() {
                 options={LANGUAGES}
                 placeholder={`Learning Language`}
                 defaultValue={learningLanguage}
+                //@ts-ignore
                 onChange={(value) => setLearningLanguage(value)}
             />
             <NewChat
