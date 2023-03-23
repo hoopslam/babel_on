@@ -13,7 +13,7 @@ function Message({ message }: Props) {
 
     return (
         <div className={`py-5 ${isTeacher && `bg-gray-200`}`}>
-            <div className='flex space-x-5 px-10 max-w-2xl mx-auto'>
+            <div className='flex space-x-5 px-10 max-w-2xl mx-auto items-center'>
                 <Image
                     src={
                         isTeacher
