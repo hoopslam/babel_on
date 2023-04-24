@@ -7,7 +7,7 @@ import Login from '@/components/Login';
 import ClientProvider from '../components/ClientProvider';
 
 export const metadata = {
-    title: 'Babel On',
+    title: 'Babel Buddy',
     description: 'Your Language AI Assistant',
 };
 

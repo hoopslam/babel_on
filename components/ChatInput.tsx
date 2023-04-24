@@ -54,7 +54,7 @@ function ChatInput({ chatId }: Props) {
             message
         );
 
-        const notification = toast.loading(`Babel is thinking`);
+        const notification = toast.loading(`Buddy is thinking`);
 
         await fetch('/api/chat-prompt', {
             method: 'POST',
@@ -67,7 +67,7 @@ function ChatInput({ chatId }: Props) {
                 session,
             }),
         }).then(() => {
-            toast.success(`Babel On`, {
+            toast.success(`Buddy`, {
                 id: notification,
             });
         });

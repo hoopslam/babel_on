@@ -1,6 +1,5 @@
 import { ROLE } from '../typings.d';
 import { DocumentData } from 'firebase/firestore';
-import Image from 'next/image';
 
 interface Props {
     message: DocumentData;
