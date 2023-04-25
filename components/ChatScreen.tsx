@@ -36,26 +36,17 @@ function ChatScreen({ chatId }: Props) {
         }
     }, [messages]);
 
-    if (messages?.docs.length)
-        return (
-            <div
-                className='flex-1 overflow-y-auto'
-                ref={containerRef}
-            >
-                {messages?.docs.map((message) => (
-                    <Message
-                        key={message.id}
-                        message={message.data()}
-                    />
-                ))}
-            </div>
-        );
     return (
-        <div className='flex-1 flex items-center justify-center'>
-            <p className='infoText'>
-                Welcome to your new chat. Say &quot;Hi&quot; to begin your new
-                language lesson.
-            </p>
+        <div
+            className='flex-1 overflow-y-auto'
+            ref={containerRef}
+        >
+            {messages?.docs.slice(1).map((message) => (
+                <Message
+                    key={message.id}
+                    message={message.data()}
+                />
+            ))}
         </div>
     );
 }

@@ -60,7 +60,7 @@ function SideBar() {
                     className='text-white flex m-5'
                 >
                     <ChatBubbleLeftRightIcon className='w-8 h-8' />
-                    <p>Babel Buddy</p>
+                    <p>New Class +</p>
                 </Link>
                 <SideBarMenu />
             </aside>
