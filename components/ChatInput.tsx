@@ -95,7 +95,6 @@ function ChatInput({ chatId }: Props) {
                     Send
                 </button>
             </form>
-            <div></div>
         </div>
     );
 }

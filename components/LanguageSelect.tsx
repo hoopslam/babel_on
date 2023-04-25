@@ -13,7 +13,7 @@ function LanguageSelect() {
 
     return (
         <div>
-            <p className='text-teal-500 mb-1 mt-2'>Your native language</p>
+            <p className='mb-1 mt-2'>1. Select your Native Language</p>
             <Select
                 isSearchable
                 options={LANGUAGES}
@@ -22,7 +22,7 @@ function LanguageSelect() {
                 //@ts-ignore
                 onChange={(value) => setNativeLanguage(value)}
             />
-            <p className='text-teal-500 mt-2 mb-1'>Your learning language</p>
+            <p className='mt-4 mb-1'>2. Select your Learning Language</p>
             <Select
                 isSearchable
                 options={LANGUAGES}
